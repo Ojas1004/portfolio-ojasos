@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OjasOS</title>
+  <meta name="description" content="{{ boot_config.profile.name }}'s portfolio, running as a small operating system in your browser.">
+  <meta name="theme-color" content="#2a0a08">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/os.css">
+</head>
+<body>
+  <div id="boot" class="boot" role="status" aria-live="polite">
+    <pre id="boot-log" class="boot-log"></pre>
+    <p class="boot-skip">press any key to skip</p>
+  </div>
+
+  <main id="desktop" class="desktop" hidden>
+    <canvas id="wallpaper" class="wallpaper" aria-hidden="true"></canvas>
+    <ul id="icons" class="icons" aria-label="Desktop"></ul>
+    <div id="windows" class="windows"></div>
+  </main>
+
+  <footer id="taskbar" class="taskbar" hidden>
+    <button id="start-btn" class="start-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="start-menu">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="2" width="14" height="10" fill="#1f4f57"/><rect x="2" y="3" width="12" height="8" fill="#08110d"/><path d="M3.5 5l2 1.5-2 1.5" stroke="#8ff2aa" fill="none"/><rect x="6.5" y="8" width="3" height="1" fill="#ffc25a"/><rect x="5" y="12" width="6" height="1" fill="#353a35"/><rect x="3" y="13" width="10" height="2" fill="#8d9088"/></svg>
+      Start
+    </button>
+    <span class="sep" aria-hidden="true"></span>
+    <div id="start-menu" class="start-menu" role="menu" hidden></div>
+    <div id="task-buttons" class="task-buttons" aria-label="Open windows"></div>
+    <div class="tray">
+      <span class="tray-item" title="Visitors since launch">
+        <span class="tray-label">visitors</span> <output id="tray-visitors">----</output>
+      </span>
+      <time id="tray-clock" class="tray-item"></time>
+    </div>
+  </footer>
+
+  <div class="crt" aria-hidden="true"></div>
+
+  <noscript>
+    <div class="noscript">
+      <h1>OjasOS needs JavaScript</h1>
+      <p>{{ boot_config.profile.name }}: {{ boot_config.profile.role }}</p>
+      <p><a href="/resume.pdf">Resume (PDF)</a></p>
+    </div>
+  </noscript>
+
+  <script>window.OJASOS = {{ boot_config | tojson }};</script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

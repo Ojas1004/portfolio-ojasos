@@ -1,0 +1,224 @@
+{
+  "name": "Ojas Chaudhary",
+  "handle": "ojas",
+  "role": "B.Tech CSE (AI & ML) student · Full-stack developer",
+  "experience": {
+    "company": "Labsity (Velinto Technologies Pvt. Ltd.)",
+    "role": "Artificial Intelligence Intern",
+    "dates": "Jun 2026 – Jul 2026",
+    "location": "New Delhi, India · On-site",
+    "certificate": "/certificates/labsity-internship-LAB-IC-A4CA03AC.pdf",
+    "verify": "https://app.labsity.in/verify/LAB-IC-A4CA03AC"
+  },
+  "education": {
+    "school": "Jain University, Faculty of Engineering & Technology (FET)",
+    "degree": "B.Tech in Computer Science and Engineering (AI & ML)",
+    "years": "2025 – 2029"
+  },
+  "location": "Earth (UTC+5:30)",
+  "email": "ojaschaudhary.1004@gmail.com",
+  "links": {
+    "github": "https://github.com/ojas1004",
+    "linkedin": "https://www.linkedin.com/in/ojaschaudhary"
+  },
+  "about": [
+    "Hi, I'm Ojas.",
+    "I'm a computer science student who likes building things that sit somewhere between machine learning research and practical software: models that need real data pipelines, and web apps that need a real backend.",
+    "Most of my work is in TypeScript and Python: React and Next.js on the frontend, Express or Flask on the backend, SQL databases underneath, and scikit-learn when there's data to learn from.",
+    "During my AI internship at Labsity (June to July 2026, on-site in New Delhi) I built production web apps as part of the team: a placement-prep coding platform (app.labsity.in), the Velinto hiring platform, the Ozashi e-commerce store, Labsity's internal CRM (Workspace) and the Circle campus ambassador program. They're Labsity's products, not my personal ones. Open the Projects folder to read about each.",
+    "This website is one of those projects. It's a small fake operating system called OjasOS. The window manager is vanilla JavaScript, and everything behind it (the terminal commands, the Ask Ojas retrieval engine, the contact form and the visitor counter) runs on a Flask backend with MongoDB.",
+    "When I'm not coding I'm probably reading papers I only half understand, tinkering with my Linux setup, or looking for the next thing to build.",
+    "Open the Terminal and type 'help', or ask me something in Ask Ojas."
+  ],
+  "skills": {
+    "Languages": [
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "SQL",
+      "C",
+      "Bash"
+    ],
+    "Frontend": [
+      "React",
+      "Next.js",
+      "Vite",
+      "Tailwind CSS",
+      "HTML/CSS"
+    ],
+    "Backend & data": [
+      "Flask",
+      "Express",
+      "REST APIs",
+      "Drizzle ORM",
+      "MySQL / MariaDB",
+      "MongoDB"
+    ],
+    "Machine learning": [
+      "scikit-learn",
+      "PyTorch",
+      "NumPy",
+      "pandas"
+    ],
+    "Integrations": [
+      "Judge0",
+      "Razorpay",
+      "OpenAI API",
+      "JWT / SSO",
+      "SMTP",
+      "WhatsApp automation"
+    ],
+    "Tools": [
+      "Git",
+      "Linux",
+      "PM2",
+      "pnpm",
+      "Docker",
+      "VS Code"
+    ]
+  },
+  "projects": [
+    {
+      "id": "coding-platform",
+      "name": "Labsity Coding Platform",
+      "org": "Labsity (internship)",
+      "tagline": "Placement-prep coding platform with an online judge, mock tests and a hiring portal",
+      "stack": [
+        "TypeScript",
+        "Next.js 14",
+        "React 18",
+        "Tailwind CSS",
+        "Express",
+        "Drizzle ORM",
+        "MySQL",
+        "Judge0",
+        "Monaco Editor",
+        "JWT SSO",
+        "PM2"
+      ],
+      "year": "2026",
+      "status": "live",
+      "description": "A production coding platform for students preparing for campus placements. Students sign in with single sign-on from Labsity's WordPress learning site, then solve problems in a Monaco-based code editor in C, C++, Java, Python or JavaScript, with every run and submission executed and graded by Judge0. It also has company-style mock tests with timers and negative marking, daily streaks with a calendar heatmap, performance analytics, a global leaderboard and a jobs board. Employers get their own portal to post jobs, rank applicants by coding score and run proctored coding assessments.",
+      "highlights": [
+        "Monorepo with a Next.js App Router frontend and an Express REST API using Drizzle ORM on MySQL",
+        "SSO from WordPress: a custom WordPress plugin issues short-lived signed JWTs, exchanged for an httpOnly session cookie",
+        "Judge0 code execution for five languages, with hidden test cases kept on the server",
+        "Proctored employer assessments: randomised problem pools, tab-switch and copy/paste detection, automatic grading",
+        "Hardened API with Helmet, rate limiting and Zod validation; runs under PM2"
+      ],
+      "link": "https://app.labsity.in"
+    },
+    {
+      "id": "ozashi",
+      "name": "Ozashi",
+      "org": "Labsity (internship)",
+      "tagline": "Full e-commerce store for a natural wellness brand",
+      "stack": [
+        "TypeScript",
+        "Next.js 16",
+        "React 19",
+        "Tailwind CSS v4",
+        "MariaDB",
+        "mysql2"
+      ],
+      "year": "2026",
+      "status": "live",
+      "description": "A complete e-commerce site for Ozashi Healthcare, a natural wellness supplements brand: product catalogue, shop-by-wellness-goal pages, cart and wishlist, checkout, customer accounts and a separate admin panel for managing products. Catalogue pages are statically generated for speed and SEO. The catalogue lives in MariaDB, with a fallback to seed data so the shop is never empty, and all money is stored as integer paise to avoid rounding errors.",
+      "highlights": [
+        "Next.js 16 App Router with static generation, sitemap and robots for SEO",
+        "Three separate identity systems (customers, admins, anonymous shoppers) that share no cookie, secret or table",
+        "Customer accounts with scrypt-hashed passwords and server-side sessions",
+        "Asset-manifest system: every image slot has a key and shows a labelled placeholder until its photo exists",
+        "Cart and wishlist kept in localStorage through React's useSyncExternalStore"
+      ],
+      "link": "https://ozashi.in"
+    },
+    {
+      "id": "velinto",
+      "name": "Velinto",
+      "org": "Labsity (internship)",
+      "tagline": "AI-assisted hiring platform for employers and candidates",
+      "stack": [
+        "JavaScript",
+        "React 18",
+        "Vite",
+        "Next.js 16",
+        "Radix UI",
+        "Tailwind CSS",
+        "Express",
+        "MariaDB",
+        "OpenAI API",
+        "Razorpay",
+        "Judge0"
+      ],
+      "year": "2026",
+      "status": "live",
+      "description": "A two-sided hiring platform. Employers post jobs, screen and rank applicants, and run assessments and interviews; candidates build a profile from their resume and use the platform for free. Resumes in PDF and Word format are parsed, and a deterministic matching engine scores each candidate against a job with explainable, configurable weights for skills, experience, location, availability and more, so the same inputs always give the same score. AI (through the OpenAI API) only makes recommendations with evidence; people make every hiring decision. Fairness is built into the database itself: there are no columns for age, gender, religion, photos or other protected attributes.",
+      "highlights": [
+        "Three apps in one monorepo: a React + Vite web app, a Next.js marketing site and an Express API",
+        "Strict multi-tenant isolation: every query is scoped to an organisation, so one company can never see another's data",
+        "Razorpay subscriptions verified on the server through signed, idempotent webhooks",
+        "Coding assessments through a Judge0-compatible service; WhatsApp and email messaging behind provider adapters",
+        "Relational schema of 40+ tables on MariaDB with versioned migrations and an audit log"
+      ],
+      "link": "https://velinto.in"
+    },
+    {
+      "id": "workspace",
+      "name": "Labsity Workspace",
+      "org": "Labsity (internship)",
+      "tagline": "Internal CRM, ERP and HR platform for Labsity's team",
+      "stack": [
+        "TypeScript",
+        "React 19",
+        "Vite",
+        "Tailwind CSS v4",
+        "TanStack Query",
+        "Express 5",
+        "Drizzle ORM",
+        "MySQL",
+        "Better Auth",
+        "whatsapp-web.js",
+        "pnpm"
+      ],
+      "year": "2026",
+      "status": "internal tool",
+      "description": "Labsity's internal operations platform. It covers lead management with a pipeline board, employee management with CSV bulk import and lead assignment, role-based access control, a calendar, in-app notifications, analytics dashboards, reports and activity logs. Staff can message leads by email or WhatsApp from saved templates with per-lead variables, and admins can run throttled bulk email and WhatsApp campaigns. In production a single Node process serves both the API and the built React client.",
+      "highlights": [
+        "pnpm monorepo: React 19 + Vite client and Express 5 API, both in TypeScript",
+        "Better Auth sessions with six roles; admins see every lead, employees only the leads assigned to them",
+        "WhatsApp bulk sender as a separate whatsapp-web.js service; SMTP email campaigns with templates and throttling",
+        "Drizzle ORM on MySQL; integrates with Labsity Circle so employees' referral codes work there"
+      ],
+      "link": "https://workspace.labsity.in"
+    },
+    {
+      "id": "circle",
+      "name": "Labsity Circle",
+      "org": "Labsity (internship)",
+      "tagline": "Campus ambassador program with referrals, missions and payments",
+      "stack": [
+        "TypeScript",
+        "Next.js 14",
+        "React 18",
+        "Tailwind CSS",
+        "Drizzle ORM",
+        "MariaDB",
+        "Razorpay",
+        "JWT",
+        "pdf-lib"
+      ],
+      "year": "2026",
+      "status": "pre-launch",
+      "description": "Labsity's campus ambassador program. Students join with an existing ambassador's referral code and get a dashboard with missions, XP, levels and a leaderboard, and upload proof screenshots for missions privately. Visitors can buy Labsity programs through Razorpay checkout; a referral code gives the buyer a discount and earns its owner a reward, credited only after the payment is confirmed. It has its own database and accounts, with an optional shared sign-in mode for app.labsity.in.",
+      "highlights": [
+        "A single Next.js 14 app, with App Router route handlers as the API",
+        "Referral tree: every ambassador is recruited by another, with per-code recruitment limits",
+        "Razorpay payments confirmed server-side by signed webhooks before any reward is credited",
+        "PDF documents generated with pdf-lib; database changes applied as reviewed SQL migrations",
+        "One-command deploy with a health check and automatic rollback"
+      ],
+      "link": "https://circle.labsity.in"
+    }
+  ]
+}

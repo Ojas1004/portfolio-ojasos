@@ -1,0 +1,24 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# vercel
+.vercel/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+.vercel
+.env*
+
+# understand-anything knowledge graph
+.ua/

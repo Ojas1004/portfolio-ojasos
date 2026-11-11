@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Who is Ojas",
+    "text": "I'm Ojas Chaudhary, a computer science student and full-stack developer. I work on web apps end to end, from React and Next.js frontends to Express and Flask APIs and SQL databases, and I enjoy machine learning with Python. I also interned at Labsity."
+  },
+  {
+    "title": "Education",
+    "text": "I'm studying for a B.Tech in Computer Science and Engineering with a specialisation in Artificial Intelligence and Machine Learning (CSE-AIML) at Jain University's Faculty of Engineering and Technology (FET), class of 2025 to 2029. My coursework covers programming in Python, data structures and algorithms, databases, machine learning and web development. This portfolio was built as part of a university Python course."
+  },
+  {
+    "title": "Skills overview",
+    "text": "My core skills are full-stack web development and Python. On the web side I build with TypeScript, React, Next.js and Tailwind CSS on the frontend, and Express, Flask, Drizzle ORM, MySQL/MariaDB and MongoDB on the backend. I've integrated Judge0, Razorpay, the OpenAI API, JWT single sign-on and WhatsApp/email messaging. I also use scikit-learn and pandas for machine learning, and Git, Linux, PM2 and pnpm every day."
+  },
+  {
+    "title": "Programming languages",
+    "text": "Languages I use: TypeScript and JavaScript for most web work, Python for backends, data and machine learning, plus SQL, C and Bash scripting."
+  },
+  {
+    "title": "Machine learning and AI",
+    "text": "For machine learning I use scikit-learn, pandas and NumPy, and I've worked with PyTorch. This site's Ask Ojas feature is my own TF-IDF retrieval engine built with scikit-learn. At Labsity I worked on Velinto, where AI (through the OpenAI API) recommends candidates with evidence while a deterministic matching engine does the actual scoring."
+  },
+  {
+    "title": "Web development and backend",
+    "text": "For web development I build Next.js and React frontends with Tailwind CSS, and REST APIs with Express or Flask. I use Drizzle ORM with MySQL or MariaDB, and MongoDB for this portfolio. I've deployed apps on Vercel, Hostinger and PM2-managed Node servers."
+  },
+  {
+    "title": "Tools and workflow",
+    "text": "My everyday tools are Git and GitHub for version control, Linux as my main operating system, Docker for containers, Jupyter for experiments, and VS Code as my editor."
+  },
+  {
+    "title": "Project: OjasOS (this website)",
+    "text": "OjasOS is this website: a portfolio designed as a retro desktop operating system. The window manager is vanilla JavaScript. The backend is Flask on Vercel serverless functions, with MongoDB Atlas for the visitor counter, command logs and contact messages. The Ask Ojas chat uses TF-IDF retrieval with scikit-learn, with no external AI API."
+  },
+  {
+    "title": "How Ask Ojas works",
+    "text": "Ask Ojas doesn't use an LLM or any external AI API. Your question is turned into a TF-IDF vector with scikit-learn and compared with cosine similarity against a small knowledge base about me. The closest entry is returned as the answer, and if nothing is similar enough you get a polite fallback."
+  },
+  {
+    "title": "Contact",
+    "text": "To reach or contact me, use the Contact app on this desktop, which sends a message straight to my inbox. You can also email me at ojaschaudhary.1004@gmail.com, see my code on GitHub at https://github.com/ojas1004, or connect on LinkedIn at https://www.linkedin.com/in/ojaschaudhary."
+  },
+  {
+    "title": "Resume and CV",
+    "text": "You can view or download my resume (CV) from the Resume app on the desktop, or by typing 'resume' in the terminal. It lists my education, skills, projects and experience."
+  },
+  {
+    "title": "Experience and internships",
+    "text": "I was an Artificial Intelligence Intern at Labsity (in the AI & ML Internship Program, with Velinto Technologies Pvt. Ltd.) from 1 June to 31 July 2026, on-site in New Delhi. During the internship I built five production web apps as part of the team: the Labsity Coding Platform (app.labsity.in), Velinto (an AI-assisted hiring platform), Ozashi (an e-commerce store), Labsity Workspace (an internal CRM and HR platform) and Labsity Circle (a campus ambassador program). They're Labsity's products; I built them while working there. The common stack was TypeScript, Next.js or React with Vite, Express, Drizzle ORM and MySQL/MariaDB, with integrations like Judge0, Razorpay and WhatsApp messaging. My internship certificate (ID LAB-IC-A4CA03AC) can be verified at https://app.labsity.in/verify/LAB-IC-A4CA03AC, and it's linked from the Resume app. I'm looking for internships and junior roles in full-stack and backend development."
+  },
+  {
+    "title": "Interests and hobbies",
+    "text": "For fun, outside of coding, I enjoy reading machine learning research papers, customising my Linux setup, retro computers and old operating systems, which partly inspired this website."
+  },
+  {
+    "title": "Snowy Singh (my cat)",
+    "text": "Snowy Singh is my cat: a fluffy white cat with blue eyes and a pink nose. A cartoon version of him wanders along the OjasOS taskbar, and you can feed him, play with him or let him nap. Real photos of Snowy are in the Snowy folder on the desktop."
+  },
+  {
+    "title": "Project: Labsity Coding Platform (app.labsity.in)",
+    "text": "The Labsity Coding Platform at app.labsity.in is a placement-preparation coding platform I built during my internship at Labsity. Students sign in through single sign-on from Labsity's WordPress site and solve problems in a Monaco code editor in C, C++, Java, Python or JavaScript, graded by Judge0. It has company mock tests, streaks, analytics, a leaderboard, a jobs board and an employer portal with proctored coding assessments. Stack: Next.js 14, React, Tailwind CSS, an Express API with Drizzle ORM on MySQL, JWT SSO and PM2."
+  },
+  {
+    "title": "Project: Ozashi (ozashi.in)",
+    "text": "Ozashi (ozashi.in) is a full e-commerce store for a natural wellness supplements brand, built during my internship at Labsity. It has a catalogue, wellness-goal pages, cart, wishlist, checkout, customer accounts and an admin panel. Stack: Next.js 16, React 19, TypeScript, Tailwind CSS v4 and MariaDB via mysql2, with statically generated product pages and prices stored as integer paise."
+  },
+  {
+    "title": "Project: Velinto",
+    "text": "Velinto (velinto.in) is an AI-assisted hiring platform built during my internship at Labsity. Employers post jobs, screen applicants and run assessments; candidates use it for free. It parses resumes, scores candidates with a deterministic, explainable matching engine, and uses the OpenAI API only for recommendations, never decisions. Stack: React and Vite web app, Next.js marketing site, Express API, MariaDB, Razorpay billing and a Judge0-compatible compiler service. It enforces strict multi-tenant isolation and stores no protected attributes like age or gender."
+  },
+  {
+    "title": "Project: Labsity Workspace (CRM, workspace.labsity.in)",
+    "text": "Labsity Workspace (workspace.labsity.in) is Labsity's internal CRM, ERP and HR platform, built during my internship. It handles leads and a sales pipeline, employees, role-based access, calendar, notifications, analytics and reports, plus WhatsApp and email messaging and bulk campaigns. Stack: React 19, Vite, Tailwind CSS v4 and TanStack Query on the client, Express 5, Drizzle ORM, MySQL and Better Auth on the server, and a whatsapp-web.js service."
+  },
+  {
+    "title": "Project: Labsity Circle (circle.labsity.in)",
+    "text": "Labsity Circle (circle.labsity.in) is Labsity's campus ambassador program, built during my internship. Students join with a referral code and complete missions for XP, levels and a leaderboard spot, and visitors can buy Labsity programs through Razorpay, with referral rewards credited after payment confirmation. Stack: Next.js 14, React, TypeScript, Tailwind CSS, Drizzle ORM on MariaDB, Razorpay webhooks, JWT sessions and pdf-lib."
+  },
+  {
+    "title": "Projects overview",
+    "text": "My main projects are the five web apps I built during my internship at Labsity: the Labsity Coding Platform, Ozashi, Velinto, Labsity Workspace and Labsity Circle, plus OjasOS, this portfolio website. Open the Projects folder or type 'projects' in the terminal for details on each."
+  }
+]

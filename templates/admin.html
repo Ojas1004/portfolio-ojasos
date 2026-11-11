@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>OjasOS Admin</title>
+  <style>
+    :root { --ink: #1c2626; --dim: #5c6967; --paper: #fffdf6; --win: #ece8db; --teal: #1f4f57; --line: #c9c4b2; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #1d4a4f; color: var(--ink); font: 13px/1.5 Tahoma, Verdana, "DejaVu Sans", sans-serif; }
+    .wrap { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+    .window { background: var(--win); padding: 3px; margin-bottom: 18px;
+      box-shadow: inset -1px -1px 0 #353a35, inset 1px 1px 0 #fff, inset -2px -2px 0 #8d9088, 4px 6px 18px rgba(0,0,0,.3); }
+    .title { background: linear-gradient(90deg, var(--teal), #3f8c87); color: #fff; font-weight: 700; padding: 4px 8px; }
+    .body { background: var(--paper); margin-top: 3px; padding: 12px; overflow-x: auto; }
+    .stats { display: flex; flex-wrap: wrap; gap: 24px; }
+    .stat b { display: block; font-size: 26px; }
+    .stat span { color: var(--dim); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--line); }
+    th { color: var(--dim); font-weight: 400; white-space: nowrap; }
+    td.msg { white-space: pre-wrap; word-break: break-word; min-width: 260px; }
+    td.when { white-space: nowrap; color: var(--dim); font-variant-numeric: tabular-nums; }
+    code { font: 12px "IBM Plex Mono", ui-monospace, monospace; }
+    .empty { color: var(--dim); }
+    .tag { display: inline-block; padding: 0 6px; background: var(--win); border: 1px solid var(--line); font-size: 11px; }
+    .warn { background: #fbeeea; padding: 8px 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    {% if not db_ok %}
+    <div class="window"><div class="title">Database</div><div class="body warn">MongoDB is not configured or unreachable. Set <code>MONGODB_URI</code>.</div></div>
+    {% endif %}
+
+    <div class="window">
+      <div class="title">OjasOS Admin: Overview</div>
+      <div class="body stats">
+        <div class="stat"><b>{{ visitors }}</b><span>visitors</span></div>
+        <div class="stat"><b>{{ message_count }}</b><span>contact messages</span></div>
+        <div class="stat"><b>{{ command_count }}</b><span>terminal commands &amp; questions</span></div>
+        <div class="stat"><b>{% for name, n in top_commands %}<span class="tag">{{ name }} × {{ n }}</span> {% else %}-{% endfor %}</b><span>top commands (last 500)</span></div>
+      </div>
+    </div>
+
+    <div class="window">
+      <div class="title">Inbox ({{ messages|length }} most recent)</div>
+      <div class="body">
+        {% if messages %}
+        <table>
+          <tr><th>received (UTC)</th><th>from</th><th>message</th></tr>
+          {% for m in messages %}
+          <tr>
+            <td class="when">{{ m.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+            <td><b>{{ m.name }}</b><br><a href="mailto:{{ m.email }}">{{ m.email }}</a></td>
+            <td class="msg">{{ m.message }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% else %}<p class="empty">No messages yet.</p>{% endif %}
+      </div>
+    </div>
+
+    <div class="window">
+      <div class="title">Recent commands ({{ commands|length }})</div>
+      <div class="body">
+        {% if commands %}
+        <table>
+          <tr><th>time (UTC)</th><th>source</th><th>command</th></tr>
+          {% for c in commands %}
+          <tr>
+            <td class="when">{{ c.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+            <td><span class="tag">{{ c.source or 'terminal' }}</span></td>
+            <td><code>{{ c.command }}</code></td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% else %}<p class="empty">No commands logged yet.</p>{% endif %}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

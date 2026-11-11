@@ -1,0 +1,18 @@
+[
+  {
+    "name": "SNOW1.jpeg",
+    "caption": "Snowy napping belly-up, pink nose to the sky.",
+    "src": "/img/snowy/SNOW1.jpeg",
+    "thumb": "/img/snowy/thumbs/SNOW1.jpeg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "name": "SNOW2.jpeg",
+    "caption": "Snowy saying hello with those blue eyes.",
+    "src": "/img/snowy/SNOW2.jpeg",
+    "thumb": "/img/snowy/thumbs/SNOW2.jpeg",
+    "width": 1280,
+    "height": 853
+  }
+]

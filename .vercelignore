@@ -1,0 +1,16 @@
+# never upload secrets or local environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+# not needed at runtime
+/tests/
+/SNOW1.jpeg
+/SNOW2.jpeg
+/resume/
+
+# code-analysis knowledge graph (local only)
+/.ua/

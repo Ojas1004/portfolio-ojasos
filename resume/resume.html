@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ojas Chaudhary - Resume</title>
+<!-- Source for public/resume.pdf. Rebuild with: python scripts/build_resume.py
+     Every fact here comes from data/profile.json, data/knowledge.json or the
+     Labsity internship certificate. Keep them in sync when something changes. -->
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --ink: #172022; --dim: #55615f; --faint: #8a9593; --accent: #1f5a5e; --accent-2: #2f7a7f;
+    --tint: #eef4f3; --rule: #cfdad8; --live: #2f7a4c; --live-bg: #e3f1e8; --internal: #6a5a1e; --internal-bg: #f5efd9; --pre: #5b4a8a; --pre-bg: #ece8f6;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; color: var(--ink); font: 8.85pt/1.38 "Open Sans", "Noto Sans", "Liberation Sans", sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  .page { padding: 0 13mm; }
+  .page + .page { break-before: page; padding-top: 11mm; }
+
+  /* header band */
+  header { margin: 0 -13mm; padding: 9mm 13mm 6mm; background: var(--tint); border-top: 5px solid var(--accent); }
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 18px; }
+  h1 { margin: 0; font-size: 25pt; line-height: 1; font-weight: 700; letter-spacing: -0.015em; }
+  .tagline { margin: 5px 0 0; color: var(--accent); font-size: 10pt; font-weight: 600; }
+  .contact { margin: 0; padding: 0; list-style: none; text-align: right; font-size: 8.5pt; line-height: 1.6; }
+  .contact b { display: inline-block; width: 64px; color: var(--faint); font-weight: 600; font-size: 7.4pt; letter-spacing: 0.06em; text-transform: uppercase; text-align: right; margin-right: 6px; }
+  .contact a { color: var(--accent); }
+  .summary { margin: 9px 0 0; font-size: 9.1pt; line-height: 1.45; }
+
+  /* at a glance */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 9px 0 0; }
+  .stat { padding: 6px 9px 7px; background: #fff; border: 1px solid var(--rule); border-left: 3px solid var(--accent-2); }
+  .stat strong { display: block; color: var(--accent); font-size: 15pt; line-height: 1.05; }
+  .stat span { display: block; color: var(--dim); font-size: 7.8pt; line-height: 1.3; }
+
+  h2 { display: flex; align-items: center; gap: 8px; margin: 12px 0 6px; color: var(--accent); font-size: 9.8pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+
+  .role { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .role h3 { margin: 0; font-size: 10.6pt; }
+  .when { flex: none; color: var(--dim); font-size: 8.6pt; font-weight: 600; }
+  .meta { margin: 1px 0 0; color: var(--dim); }
+  .meta a { color: var(--accent); }
+  .intro { margin: 5px 0 2px; }
+
+  .project { margin: 8px 0 0; padding: 0 0 0 10px; border-left: 2px solid var(--rule); break-inside: avoid; }
+  .ptitle { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .ptitle h4 { margin: 0; font-size: 9.8pt; }
+  .ptitle .what { color: var(--dim); }
+  .ptitle .link { margin-left: auto; color: var(--accent); font-size: 8.4pt; }
+  .badge { padding: 0 6px; border-radius: 8px; font-size: 7pt; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; line-height: 1.55; }
+  .badge.live { color: var(--live); background: var(--live-bg); }
+  .badge.internal { color: var(--internal); background: var(--internal-bg); }
+  .badge.pre { color: var(--pre); background: var(--pre-bg); }
+  .stack { display: flex; flex-wrap: wrap; gap: 3px; margin: 3px 0 2px; padding: 0; list-style: none; }
+  .stack li { padding: 0 5px; background: var(--tint); color: var(--accent); font-size: 7.5pt; line-height: 1.6; }
+  ul.points { margin: 2px 0 0; padding-left: 13px; }
+  ul.points li { margin: 1px 0; }
+  ul.points li::marker { color: var(--accent-2); }
+  ul.points b { font-weight: 600; }
+
+  /* page 2 lower half: two columns */
+  .cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 0 22px; }
+  .edu h3 { margin: 0; font-size: 9.8pt; }
+  .edu p { margin: 1px 0 0; }
+  .label { color: var(--dim); font-weight: 600; }
+  dl.skills { margin: 0; }
+  dl.skills dt { margin: 5px 0 1px; color: var(--accent); font-size: 7.8pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  dl.skills dt:first-child { margin-top: 0; }
+  dl.skills dd { margin: 0; }
+  .cert { padding: 7px 10px; background: var(--tint); border-left: 3px solid var(--accent-2); break-inside: avoid; }
+  .cert h3 { margin: 0; font-size: 9.6pt; }
+  .cert p { margin: 1px 0 0; }
+  .cert a { color: var(--accent); font-weight: 600; }
+  .interests { margin: 0; padding: 0; list-style: none; }
+  .interests li { margin: 2px 0; padding-left: 12px; position: relative; }
+  .interests li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 5px; height: 5px; background: var(--accent-2); }
+  footer { margin-top: 14px; padding-top: 6px; border-top: 1px solid var(--rule); color: var(--faint); font-size: 7.6pt; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 ═══════════════ -->
+<div class="page">
+  <header>
+    <div class="head">
+      <div>
+        <h1>Ojas Chaudhary</h1>
+        <p class="tagline">B.Tech CSE (AI &amp; ML) · Full-stack developer · AI Intern at Labsity</p>
+      </div>
+      <ul class="contact">
+        <li><b>Email</b><a href="mailto:ojaschaudhary.1004@gmail.com">ojaschaudhary.1004@gmail.com</a></li>
+        <li><b>Portfolio</b><a href="https://ojaschaudhary.vercel.app">ojaschaudhary.vercel.app</a></li>
+        <li><b>GitHub</b><a href="https://github.com/ojas1004">github.com/ojas1004</a></li>
+        <li><b>LinkedIn</b><a href="https://www.linkedin.com/in/ojaschaudhary">linkedin.com/in/ojaschaudhary</a></li>
+      </ul>
+    </div>
+    <p class="summary">Computer science (AI &amp; ML) student at Jain University and full-stack developer who works on web apps end to end, from React and Next.js frontends to Express and Flask APIs and SQL databases. During a two-month on-site AI internship at Labsity I built five web apps as part of the engineering team, including an online judge, an AI-assisted hiring platform and an e-commerce store, three of them live in production. I like problems that sit between machine learning and practical software: models that need real data pipelines, and products that need a real backend.</p>
+    <div class="stats">
+      <div class="stat"><strong>5</strong><span>web apps built during the Labsity internship</span></div>
+      <div class="stat"><strong>3</strong><span>of them live in production on their own domains</span></div>
+      <div class="stat"><strong>40+</strong><span>tables in Velinto's multi-tenant schema</span></div>
+      <div class="stat"><strong>2 mo</strong><span>on-site AI internship, verified certificate</span></div>
+    </div>
+  </header>
+
+  <h2>Experience</h2>
+  <div class="role">
+    <h3>Artificial Intelligence Intern · Labsity</h3>
+    <span class="when">Jun 2026 – Jul 2026</span>
+  </div>
+  <p class="meta">AI &amp; ML Internship Program, Velinto Technologies Pvt. Ltd. · New Delhi, India · On-site · Certificate <a href="https://app.labsity.in/verify/LAB-IC-A4CA03AC">LAB-IC-A4CA03AC</a> (verified)</p>
+  <p class="intro">Worked in Labsity's engineering team across the full stack: TypeScript and JavaScript frontends (Next.js, React, Tailwind CSS), Express and Next.js APIs, MySQL/MariaDB with Drizzle ORM, and integrations for code execution, payments, AI and messaging. Contributed features, admin and CRM modules, REST APIs, database work, debugging, testing and code reviews, using Git/GitHub in an agile team.</p>
+
+  <div class="project">
+    <div class="ptitle"><h4>Labsity Coding Platform</h4><span class="what">placement-prep platform and online judge</span><span class="badge live">Live</span><a class="link" href="https://app.labsity.in">app.labsity.in</a></div>
+    <ul class="stack"><li>Next.js 14</li><li>React 18</li><li>Tailwind CSS</li><li>Express</li><li>Drizzle ORM</li><li>MySQL</li><li>Judge0</li><li>Monaco Editor</li><li>JWT SSO</li><li>PM2</li></ul>
+    <ul class="points">
+      <li>Students solve problems in a Monaco code editor in <b>C, C++, Java, Python and JavaScript</b>; every run and submission is executed and graded by <b>Judge0</b> against hidden test cases kept on the server.</li>
+      <li>Company-style mock tests with timers and negative marking, daily streaks with a calendar heatmap, performance analytics, a global leaderboard and a jobs board.</li>
+      <li><b>Single sign-on</b> from Labsity's WordPress learning site: a custom WordPress plugin issues short-lived signed JWTs, which the API exchanges for an httpOnly session cookie.</li>
+      <li>Employer portal to post jobs, rank applicants by coding score and run <b>proctored assessments</b> with randomised problem pools, tab-switch and copy/paste detection and automatic grading.</li>
+      <li>Monorepo with a Next.js App Router frontend and an Express REST API on Drizzle ORM and MySQL, hardened with Helmet, rate limiting and Zod validation, running under PM2.</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="ptitle"><h4>Velinto</h4><span class="what">AI-assisted hiring platform</span><span class="badge live">Live</span><a class="link" href="https://velinto.in">velinto.in</a></div>
+    <ul class="stack"><li>React 18</li><li>Vite</li><li>Next.js 16</li><li>Radix UI</li><li>Tailwind CSS</li><li>Express</li><li>MariaDB</li><li>OpenAI API</li><li>Razorpay</li><li>Judge0</li></ul>
+    <ul class="points">
+      <li>Two-sided platform: employers post jobs, screen and rank applicants and run assessments and interviews; candidates build a profile from their resume and use it for free.</li>
+      <li>Resumes in PDF and Word are parsed into a <b>deterministic matching engine</b> with explainable, configurable weights for skills, experience, location and availability, so the same inputs always give the same score.</li>
+      <li><b>Responsible AI:</b> the OpenAI API only makes recommendations with evidence and people make every hiring decision; the database has no columns for age, gender, religion, photos or other protected attributes.</li>
+      <li>Three apps in one monorepo (React + Vite web app, Next.js marketing site, Express API) with <b>strict multi-tenant isolation</b>: every query is scoped to an organisation across a 40+ table MariaDB schema with versioned migrations and an audit log.</li>
+      <li>Razorpay subscriptions verified on the server through signed, idempotent webhooks; coding assessments through a Judge0-compatible service; WhatsApp and email behind provider adapters.</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="ptitle"><h4>Ozashi</h4><span class="what">e-commerce store for a wellness brand</span><span class="badge live">Live</span><a class="link" href="https://ozashi.in">ozashi.in</a></div>
+    <ul class="stack"><li>Next.js 16</li><li>React 19</li><li>TypeScript</li><li>Tailwind CSS v4</li><li>MariaDB</li><li>mysql2</li></ul>
+    <ul class="points">
+      <li>Complete store for Ozashi Healthcare: product catalogue, shop-by-wellness-goal pages, cart, wishlist, checkout, customer accounts and a separate admin panel for managing products.</li>
+      <li>Statically generated catalogue pages with sitemap and robots for speed and <b>SEO</b>; catalogue in MariaDB with a seed-data fallback so the shop is never empty; all money stored as integer paise.</li>
+      <li><b>Three separate identity systems</b> (customers, admins, anonymous shoppers) that share no cookie, secret or table; scrypt-hashed passwords with server-side sessions.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 2 ═══════════════ -->
+<div class="page">
+  <div class="project">
+    <div class="ptitle"><h4>Labsity Workspace</h4><span class="what">internal CRM, ERP and HR platform</span><span class="badge internal">Internal tool</span><a class="link" href="https://workspace.labsity.in">workspace.labsity.in</a></div>
+    <ul class="stack"><li>React 19</li><li>Vite</li><li>TanStack Query</li><li>Express 5</li><li>Drizzle ORM</li><li>MySQL</li><li>Better Auth</li><li>whatsapp-web.js</li><li>pnpm</li></ul>
+    <ul class="points">
+      <li>Lead management with a pipeline board, employee management with CSV bulk import and lead assignment, calendar, in-app notifications, analytics dashboards, reports and activity logs.</li>
+      <li><b>Role-based access</b> with Better Auth sessions across six roles: admins see every lead, employees only the leads assigned to them.</li>
+      <li>Email and WhatsApp messaging from saved templates with per-lead variables, plus <b>throttled bulk campaigns</b> over SMTP and a separate whatsapp-web.js service.</li>
+      <li>TypeScript pnpm monorepo where one Node process serves both the API and the built React client in production; integrates with Labsity Circle so employees' referral codes work there.</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="ptitle"><h4>Labsity Circle</h4><span class="what">campus ambassador and referral program</span><span class="badge pre">Pre-launch</span><a class="link" href="https://circle.labsity.in">circle.labsity.in</a></div>
+    <ul class="stack"><li>Next.js 14</li><li>React 18</li><li>TypeScript</li><li>Tailwind CSS</li><li>Drizzle ORM</li><li>MariaDB</li><li>Razorpay</li><li>JWT</li><li>pdf-lib</li></ul>
+    <ul class="points">
+      <li>Students join with an ambassador's referral code and get a dashboard with missions, XP, levels and a leaderboard, uploading mission proof screenshots privately.</li>
+      <li><b>Referral tree</b> with per-code recruitment limits; Razorpay checkout where a referral code discounts the buyer and rewards its owner only after the payment is confirmed by a signed webhook.</li>
+      <li>Single Next.js 14 app with App Router route handlers as the API, its own database and accounts plus an optional shared sign-in with app.labsity.in; PDFs generated with pdf-lib.</li>
+      <li>Reviewed SQL migrations and a <b>one-command deploy</b> with a health check and automatic rollback.</li>
+    </ul>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="project">
+    <div class="ptitle"><h4>OjasOS</h4><span class="what">portfolio built as a retro desktop operating system</span><span class="badge live">Live</span><a class="link" href="https://ojaschaudhary.vercel.app">ojaschaudhary.vercel.app</a></div>
+    <ul class="stack"><li>Python</li><li>Flask</li><li>MongoDB Atlas</li><li>scikit-learn</li><li>JavaScript</li><li>Canvas 2D</li><li>Vercel serverless</li><li>pytest</li></ul>
+    <ul class="points">
+      <li>Vanilla JavaScript window manager with draggable, resizable windows, a taskbar and Start menu, a touch edition for phones, notes with autosave, a photo viewer and a wandering virtual pet cat.</li>
+      <li>Flask backend on Vercel serverless functions with MongoDB Atlas: a terminal backed by a server-side command shell, a visitor counter, command logging and a contact form protected by a <b>honeypot</b>, <b>salted IP hashing</b> and per-IP rate limiting with TTL indexes.</li>
+      <li><b>"Ask Ojas"</b> question answering with scikit-learn: TF-IDF vectors and cosine similarity over a hand-written knowledge base, with no external AI API.</li>
+      <li>Live <b>network inspector</b> built on the Resource Timing API and Server-Timing headers, showing Flask and MongoDB time per request measured with PyMongo command monitoring; password-protected admin dashboard.</li>
+      <li>Three canvas games and procedurally animated halftone wallpapers that redraw only the dots that change each frame; backend covered by 44 pytest tests running against mongomock.</li>
+    </ul>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>Education</h2>
+      <div class="edu">
+        <div class="role"><h3>Jain University</h3><span class="when">2025 – 2029</span></div>
+        <p>Faculty of Engineering &amp; Technology (FET)</p>
+        <p>B.Tech, Computer Science and Engineering, specialisation in Artificial Intelligence &amp; Machine Learning</p>
+        <p style="margin-top:4px"><span class="label">Coursework:</span> Programming in Python, Data Structures &amp; Algorithms, Databases, Machine Learning, Web Development</p>
+      </div>
+
+      <h2>Certification</h2>
+      <div class="cert">
+        <h3>Internship Certificate · AI Intern</h3>
+        <p>Artificial Intelligence &amp; Machine Learning Program, Labsity with Velinto Technologies Pvt. Ltd.</p>
+        <p>1 Jun 2026 – 31 Jul 2026 · issued 31 Jul 2026 · ID LAB-IC-A4CA03AC</p>
+        <p><a href="https://app.labsity.in/verify/LAB-IC-A4CA03AC">Verify: app.labsity.in/verify/LAB-IC-A4CA03AC</a></p>
+      </div>
+
+      <h2>Interests</h2>
+      <ul class="interests">
+        <li>Reading machine learning research papers</li>
+        <li>Customising my Linux setup</li>
+        <li>Retro computers and old operating systems (the inspiration for OjasOS)</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt><dd>Python, TypeScript, JavaScript, SQL, C, Bash</dd>
+        <dt>Frontend</dt><dd>React, Next.js, Vite, Tailwind CSS, Radix UI, TanStack Query, HTML/CSS, Canvas</dd>
+        <dt>Backend &amp; data</dt><dd>Flask, Express, REST APIs, Drizzle ORM, MySQL / MariaDB, MongoDB</dd>
+        <dt>AI &amp; machine learning</dt><dd>scikit-learn, PyTorch, NumPy, pandas, Jupyter, TF-IDF retrieval, OpenAI API</dd>
+        <dt>Integrations</dt><dd>Judge0, Razorpay, JWT / SSO, Better Auth, SMTP, WhatsApp automation</dd>
+        <dt>Practices</dt><dd>Auth and sessions, multi-tenant data isolation, webhook verification, database migrations, rate limiting, automated testing</dd>
+        <dt>Tools &amp; deployment</dt><dd>Git / GitHub, Linux, Docker, PM2, pnpm, Vercel, Hostinger, VS Code</dd>
+      </dl>
+    </div>
+  </div>
+
+  <footer><span>Ojas Chaudhary · Resume</span><span>Latest version: ojaschaudhary.vercel.app/resume.pdf</span></footer>
+</div>
+
+</body>
+</html>
